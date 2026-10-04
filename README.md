@@ -9,10 +9,10 @@ See how much Claude you have left on **every** account, plus a running recap of 
 <sub>Example with placeholder data. The same thing as plain text:</sub>
 
 ```
- my-project  ✱ Opus 5.5  § $4.13  ☉ $83.85                          ← your current status line (kept as-is)
+ my-project  ✱ Opus 5.5  § $2.40  ☉ $18.75                          ← your current status line (kept as-is)
 ※ You're adding a usage bar for your Work and Personal accounts. The bar works on both accounts. Next, you're
   sharing it on GitHub, and Claude needs your OK before it goes public.  last edit Oct 4, 3:40pm MDT
-● Work          5h ━━━━━━━─────  61% 1h 5m    week ━───────────  12% 6d 1h    Fable ────────────   0% 6d 1h    extra $150/$150 this month
+● Work          5h ━━━━━━━─────  61% 1h 5m    week ━───────────  12% 6d 1h    Fable ────────────   0% 6d 1h    extra $42/$150 this month
   Personal Max  5h ────────────   2% 4h 55m   week ━───────────  10% 2d 21h   Fable ────────────   0% 2d 21h
 ```
 

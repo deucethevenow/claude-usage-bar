@@ -4,6 +4,10 @@ See how much Claude you have left on **every** account, plus a running recap of 
 
 > Built on [claude-swap](https://github.com/realiti4/claude-swap) by @realiti4 and [claude-powerline](https://github.com/Owloops/claude-powerline) by @Owloops. See [Credits](#credits).
 
+![claude-usage-bar in Claude Code: your old status line, a recap of the chat, and one usage line per account](docs/screenshot.png)
+
+<sub>Example with placeholder data. The same thing as plain text:</sub>
+
 ```
  my-project  ✱ Opus 5.5  § $4.13  ☉ $83.85                          ← your current status line (kept as-is)
 ※ You're adding a usage bar for your Work and Personal accounts. The bar works on both accounts. Next, you're

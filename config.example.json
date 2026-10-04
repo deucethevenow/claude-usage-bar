@@ -1,0 +1,8 @@
+{
+  "top_command": "npx -y @owloops/claude-powerline@latest --style=powerline",
+  "names": { "work": "Work Team", "personal": "Personal Max" },
+  "timezone": "America/Denver",
+  "recap": true,
+  "recap_every_seconds": 180,
+  "bar_width": 12
+}

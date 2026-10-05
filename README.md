@@ -9,11 +9,14 @@ See how much Claude you have left on **every** account, plus a running recap of 
 <sub>Example with placeholder data. The same thing as plain text:</sub>
 
 ```
- my-project  ✱ Opus 5.5  § $2.40  ☉ $18.75                          ← your current status line (kept as-is)
-※ You're adding a usage bar for your Work and Personal accounts. The bar works on both accounts. Next, you're
-  sharing it on GitHub, and Claude needs your OK before it goes public.  last edit Oct 4, 3:40pm MDT
-● Work          5h ━━━━━━━─────  61% 1h 5m    week ━───────────  12% 6d 1h    Fable ────────────   0% 6d 1h    extra $42/$150 this month
-  Personal Max  5h ────────────   2% 4h 55m   week ━───────────  10% 2d 21h   Fable ────────────   0% 2d 21h
+ my-app  ⎇ main ✓  ✱ Opus 5.5 (1M context)                          ← your current status line (kept as-is)
+※ You're adding a dark mode toggle to the my-app settings page. The toggle works, saves your choice, and all 12 tests
+  pass. Next, you review the screenshot and say if the colors look right before Claude commits.  last edit Oct 4, 4:12pm MDT
+  This chat's memory  ━━━━━───────  38% used   62% left  before Claude summarizes older messages
+                5-HOUR LIMIT                                           WEEKLY LIMIT                                           FABLE WEEKLY LIMIT
+● Work Team     ━━━━━━━━━───  76% used   24% left  refills in 2h 47m   ━━━━━───────  40% used   60% left  refills in 4d 21h   ━━━━━━━━━───  71% used   29% left  refills in 4d 21h
+                paid extra this month $42 of $150
+  Personal Max  ────────────   0% used  100% left  not started         ━━━━━━━━━━━─  91% used    9% left  refills in 1d 6h    ━━━━━━━───── 59% used   41% left  refills in 5d 3h
 ```
 
 In the terminal, the bars are colored: green under 70% used, yellow at 70 to 89%, and red at 90% or more.
@@ -28,7 +31,8 @@ If you use Claude Code a lot, you run into three annoyances:
 
 This tool adds three things to the bottom of Claude Code:
 
-- **One usage line per account**, showing the 5-hour limit, the weekly limit, any per-model weekly limit (like Fable), and paid extra usage if it's on. Each one shows how much you've used and when it refills. A green dot marks the account you're using now.
+- **One usage line per account**, showing the 5-hour limit, the weekly limit, any per-model weekly limit (like Fable), and paid extra usage if it's on. Each limit is labeled with how much you've used, how much is left, and when it refills. A green dot marks the account you're using now. On a narrow terminal it switches to short bars.
+- **How full this chat's memory is**, so you know how much room is left before Claude starts summarizing older messages.
 - **A recap line** with 2 to 3 plain sentences about what this chat is working on, where it stands, and the next step. It updates as you work.
 - **The time Claude last edited a file** in this chat, in your time zone.
 

@@ -34,7 +34,13 @@ check "user hooks with usage-bar in the path stay"  'grep -q my-own-hook "$S" &&
 
 OUT=$(echo '{"session_id":"t1"}' | "$PY" "$T/.claude/usage-bar/bar.py" | sed "s/$(printf '\033')\[[0-9;]*m//g")
 check "old status line still prints on top"         'echo "$OUT" | head -1 | grep -q OLD-BAR'
-check "a null usage number doesn't blank the bar"   'echo "$OUT" | grep -q "week ━.* 95%"'
+check "a null usage number doesn't blank the bar"   'echo "$OUT" | grep -q "95% used"'
+
+OUT=$(echo '{"session_id":"t1","context_window":{"used_percentage":21}}' | COLUMNS=200 "$PY" "$T/.claude/usage-bar/bar.py" | sed "s/$(printf '\033')\[[0-9;]*m//g")
+check "wide terminal shows labeled columns"         'echo "$OUT" | grep -q "WEEKLY LIMIT" && echo "$OUT" | grep -q "95% used.*5% left.*refills in 2d"'
+check "chat memory line shows used and left"        'echo "$OUT" | grep -q "This chat.s memory.*21% used.*79% left"'
+OUT=$(echo '{}' | COLUMNS=40 "$PY" "$T/.claude/usage-bar/bar.py" | sed "s/$(printf '\033')\[[0-9;]*m//g")
+check "narrow terminal falls back to short bars"    '! echo "$OUT" | grep -q "WEEKLY LIMIT" && echo "$OUT" | grep -q "week ━.* 95%"'
 
 echo '{"names":null,"top_command":"echo OLD-BAR"}' > "$T/.claude/usage-bar/config.json"
 OUT=$(echo '{}' | "$PY" "$T/.claude/usage-bar/bar.py" 2>&1)
@@ -44,8 +50,8 @@ check "names: null in config doesn't crash"         'echo "$OUT" | grep -q work'
 rm -f "$T/.claude/usage-bar/state/cswap."*
 printf '#!/bin/bash\nsleep 2; exit 1\n' > "$T/bin/cswap"
 echo '{}' | "$PY" "$T/.claude/usage-bar/bar.py" >/dev/null
-START=$(date +%s); echo '{}' | "$PY" "$T/.claude/usage-bar/bar.py" >/dev/null; END=$(date +%s)
-check "a failed usage read isn't retried right away" '[ $((END - START)) -lt 2 ]'
+MS=$("$PY" -c 'import subprocess,sys,time; t=time.time(); subprocess.run([sys.argv[1], sys.argv[2]], input=b"{}", capture_output=True); print(int((time.time()-t)*1000))' "$PY" "$T/.claude/usage-bar/bar.py")
+check "a failed usage read isn't retried right away" '[ "$MS" -lt 1500 ]'
 
 # The user changes their status line, then installs again: uninstall should bring back the newer one.
 "$PY" - "$S" <<'X'

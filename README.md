@@ -85,6 +85,9 @@ Change settings in `~/.claude/usage-bar/config.json`. The installer creates this
 | `recap` | Turn the recap line on or off | `true` |
 | `recap_every_seconds` | The shortest wait between recap updates | `180` |
 | `bar_width` | How many characters wide each bar is | `12` |
+| `labels` | `auto` shows labeled columns (used, left, refills in) when the terminal is wide enough, and short bars when it isn't. `short` always uses short bars. | `auto` |
+| `show_context` | Show how full this chat's memory is | `true` |
+| `show_extra_spend` | Show paid extra usage this month, if your plan has it | `true` |
 
 ## How it works
 

@@ -12,6 +12,9 @@ DEFAULTS = {
     "top_command": "",           # your old status line; runs first and stays on top
     "names": {},                 # claude-swap alias -> name shown in the bar
     "bar_width": 12,
+    "labels": "auto",            # "auto": labeled table when it fits; "short": compact bars only
+    "show_context": True,        # line showing how full this chat's memory is
+    "show_extra_spend": True,    # paid extra usage this month, if your plan has it
     "usage_cache_seconds": 60,
     "recap": True,
     "recap_model": "haiku",

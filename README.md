@@ -16,7 +16,7 @@ See how much Claude you have left on **every** account, plus a running recap of 
                 5-HOUR LIMIT                                           WEEKLY LIMIT                                           FABLE WEEKLY LIMIT
 ● Work Team     ━━━━━━━━━───  76% used   24% left  refills in 2h 47m   ━━━━━───────  40% used   60% left  refills in 4d 21h   ━━━━━━━━━───  71% used   29% left  refills in 4d 21h
                 paid extra this month $42 of $150
-  Personal Max  ────────────   0% used  100% left  not started         ━━━━━━━━━━━─  91% used    9% left  refills in 1d 6h    ━━━━━━━───── 59% used   41% left  refills in 5d 3h
+  Personal Max  ────────────   0% used  100% left  not started         ━━━━━━━━━━━─  91% used    9% left  refills in 1d 6h    ━━━━━━━─────  59% used   41% left  refills in 5d 3h
 ```
 
 In the terminal, the bars are colored: green under 70% used, yellow at 70 to 89%, and red at 90% or more.
